@@ -104,49 +104,5 @@ void MainComponent::paint (Graphics& g)
 
 void MainComponent::resized()
 {
-    Rectangle<int> bounds = getLocalBounds();
-    FlexBox flexbox;
-
-    Array<FlexItem> items;
     
-    flexbox.flexDirection = FlexBox::Direction::column;
-    flexbox.alignContent = FlexBox::AlignContent::spaceBetween;
-    flexbox.alignItems = FlexBox::AlignItems::stretch;
-    flexbox.justifyContent = FlexBox::JustifyContent::flexStart;
-    flexbox.flexWrap = FlexBox::Wrap::wrap;
-    
-    items.add(FlexItem(100, 200, slider1));
-    items.add(FlexItem(100, 200, slider2));
-    items.add(FlexItem(100, 200, slider3));
-    
-    for (int i = 0; i < items.size(); i++)
-    {
-        items[i].withAlignSelf(FlexItem::AlignSelf::autoAlign);
-    }
-    
-    flexbox.items = items;
-    flexbox.performLayout(bounds.removeFromLeft(400));
-    
-    FlexBox flexbox2;
-    Array<FlexItem> items2;
-
-    flexbox2.flexDirection = FlexBox::Direction::column;
-    flexbox2.alignContent = FlexBox::AlignContent::spaceBetween;
-    flexbox2.alignItems = FlexBox::AlignItems::stretch;
-    flexbox2.justifyContent = FlexBox::JustifyContent::flexStart;
-    flexbox2.flexWrap = FlexBox::Wrap::wrap;
-    
-    items2.add(FlexItem(100, 200, slider4));
-    items2.add(FlexItem(100, 200, slider5));
-    items2.add(FlexItem(100, 200, slider6));
-    
-    for (int i = 0; i < items2.size(); i++)
-    {
-        items2[i].withAlignSelf(FlexItem::AlignSelf::autoAlign);
-    }
-    
-    flexbox2.items = items2;
-    flexbox2.performLayout(bounds);
-    
-
 }
