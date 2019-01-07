@@ -53,7 +53,6 @@ MainComponent::MainComponent()
     slider6.setRange(0.0, 1.0);
     slider6.setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
     addAndMakeVisible(slider6);
-    
 }
 
 MainComponent::~MainComponent()
@@ -104,5 +103,31 @@ void MainComponent::paint (Graphics& g)
 
 void MainComponent::resized()
 {
+    Rectangle<int> bounds = getLocalBounds();
     
+    FlexBox flexbox;
+    flexbox.flexDirection = FlexBox::Direction::column;
+    flexbox.flexWrap = FlexBox::Wrap::wrap;
+    flexbox.alignContent = FlexBox::AlignContent::stretch;
+
+    Array<FlexItem> itemArray;
+    itemArray.add(FlexItem(150, 200, slider1));
+    itemArray.add(FlexItem(150, 200, slider2));
+    itemArray.add(FlexItem(150, 200, slider3));
+
+    flexbox.items = itemArray;
+    flexbox.performLayout(bounds.removeFromLeft(400));
+    
+    FlexBox flexbox2;
+    flexbox2.flexDirection = FlexBox::Direction::column;
+    flexbox2.flexWrap = FlexBox::Wrap::wrap;
+    flexbox2.alignContent = FlexBox::AlignContent::stretch;
+
+    Array<FlexItem> itemArray2;
+    itemArray2.add(FlexItem(150, 200, slider4));
+    itemArray2.add(FlexItem(150, 200, slider5));
+    itemArray2.add(FlexItem(150, 200, slider6));
+
+    flexbox2.items = itemArray2;
+    flexbox2.performLayout(bounds);
 }

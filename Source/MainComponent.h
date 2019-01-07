@@ -38,7 +38,6 @@ private:
     Slider slider4;
     Slider slider5;
     Slider slider6;
-    
   
     //==============================================================================
     // Your private member variables go here...
